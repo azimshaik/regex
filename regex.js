@@ -9,6 +9,7 @@ var server = http.createServer((request, response) => {
     "Content-Type": "text/plain"
   });
   const regex = /EDWOOP.([a-zA-Z_]*)\s/gm;
+  // regex = [a-zA-z1-9]*\.[a-zA-Z_]*;
   var filename = "content.txt";
   var str = fs.readFileSync(filename).toString();
   let m;
@@ -33,6 +34,16 @@ server.listen(port, host, error => {
 
   console.log("server is listening on " + host + ":" + port);
 });
+
+
+
+
+
+
+
+
+
+
 
 // const string = "EDWOOP.SCHEMA_NAME";
 // const regex = "/EDWOOP.([a-zA-Z_]*)s";
