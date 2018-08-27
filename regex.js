@@ -11,7 +11,6 @@ var server = http.createServer((request, response) => {
   const regex = /EDWOOP.([a-zA-Z_]*)\s/gm;
   var filename = "content.txt";
   var str = fs.readFileSync(filename).toString();
-  console.log(str);
   let m;
 
   while ((m = regex.exec(str)) !== null) {
