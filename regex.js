@@ -9,7 +9,7 @@ var server = http.createServer((request, response) => {
     "Content-Type": "text/plain"
   });
   const regex = /EDWOOP.([a-zA-Z_]*)\s/gm;
-  // regex = [a-zA-z1-9]*\.[a-zA-Z_]*;
+  // regex = /[a-zA-z1-9]*\.[a-zA-Z_]*/gm;
   var filename = "content.txt";
   var str = fs.readFileSync(filename).toString();
   let m;
