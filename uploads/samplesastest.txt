@@ -1,0 +1,40 @@
+/(EDWOOP).[a-zA-Z_]*\s*
+
+
+EDWOOP.hello_full t1
+EDWOOP.HELLO_WORLD t1
+EDWOOP
+EDWOOP
+
+
+proc sql;
+ create table Combined as
+  select t1.name, t2.units
+  from edwoop.candy_customers as t1
+  inner join edwoop.candy_sales_history as t2
+    on (t1.custid = t2.customer);
+quit;
+
+PROC SQL;
+ CREATE TABLE COMBINED AS
+  SELECT T1.NAME, T2.UNITS
+  FROM EDWOOP.CANDY_CUSTOMERS AS T1
+  INNER JOIN EDWOOP.CANDY_SALES_HISTORY AS T2
+    ON (T1.CUSTID = T2.CUSTOMER);
+QUIT;
+
+
+Schema:
+------
+EDWOOP
+
+
+Tables:
+------
+CANDY_CUSTOMERS as T1
+CANDY_SALES_HISTORY as T2
+
+Columns:
+-------
+NAME
+UNITS
