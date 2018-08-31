@@ -35,6 +35,7 @@ app.post('/', (req, res) => {
             //console.log(typeof data);
             let m;
             const regex = /[a-zA-z1-9]*\.[a-zA-Z_]*/gm;
+            var matches = [];
             while ((m = regex.exec(data)) !== null) {
                 // This is necessary to avoid infinite loops with zero-width matches
                 if (m.index === regex.lastIndex) {
@@ -43,6 +44,7 @@ app.post('/', (req, res) => {
                 // The result can be accessed through the `m`-variable.
                 m.forEach((match, groupIndex) => {
                     console.log(`Found match, group ${groupIndex}: ${match}`);
+                    matches.push(match);
                 });
             }
         });
